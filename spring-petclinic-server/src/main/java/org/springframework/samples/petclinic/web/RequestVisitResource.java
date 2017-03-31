@@ -10,11 +10,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.samples.petclinic.model.RequestVisit;
 import org.springframework.samples.petclinic.service.ClinicService;
 import org.springframework.samples.petclinic.service.RequestVisitService;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,7 +32,7 @@ public class RequestVisitResource extends AbstractResourceController{
 		this.clinicService=clinicService;
 	}
 	
-	@GetMapping("/requestvisits/list")
+	@GetMapping("/requestvisits/list1")
 	public Collection<RequestVisit> findRequestVisitAll(){
 		return requestVisitService.findRequestVisitAll();
 	}
