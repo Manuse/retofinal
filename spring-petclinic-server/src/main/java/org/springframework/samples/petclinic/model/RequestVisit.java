@@ -55,7 +55,7 @@ public class RequestVisit extends BaseEntity {
     // TODO Relación Muchos a uno con la columna "pet_id"
     // TODO
     @ManyToOne 
-    @JoinColumn(name="pet")
+    @JoinColumn(name="pet_id")
 	private Pet pet;
     
     /**
@@ -63,7 +63,7 @@ public class RequestVisit extends BaseEntity {
      */
 	// TODO Relación Muchos a uno con la columna "vet_id"
     @ManyToOne 
-    @JoinColumn(name="vet")
+    @JoinColumn(name="vet_id")
     private Vet vet;
     
     /**
@@ -71,7 +71,7 @@ public class RequestVisit extends BaseEntity {
      */
     // TODO Relación Muchos a uno con la columna "owner_id"
     @ManyToOne 
-    @JoinColumn(name="owner")
+    @JoinColumn(name="owner_id")
     private Owner owner;
     
     @Column(name = "state")

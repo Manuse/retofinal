@@ -51,18 +51,7 @@ public class Vet extends Person {
             inverseJoinColumns = @JoinColumn(name = "specialty_id"))
     private Set<Specialty> specialties;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "vet", fetch = FetchType.EAGER)
-    private Set<RequestVisit> requestVisits;
-    
-    
 
-    public Set<RequestVisit> getRequestVisits() {
-		return requestVisits;
-	}
-
-	public void setRequestVisits(Set<RequestVisit> requestVisits) {
-		this.requestVisits = requestVisits;
-	}
 
 	protected void setSpecialtiesInternal(Set<Specialty> specialties) {
         this.specialties = specialties;
