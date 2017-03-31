@@ -13,6 +13,7 @@ import org.springframework.samples.petclinic.service.RequestVisitService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
@@ -45,6 +46,11 @@ public class RequestVisitResource extends AbstractResourceController{
 		rv.setDate(requestVisitInput.getVisitDate());
 		rv.setState(0);
 		requestVisitService.saveRequestVisit(rv);
+	}
+	
+	@PutMapping("/requestvisit/{requestVisitId}/changestate")
+	public RequestVisit changeState(@PathVariable("requestVisitId") int requestVisitId){
+		return requestVisitService.updateState(requestVisitService.findById(requestVisitId));
 	}
 	
 	@GetMapping("/requestvisit/{ownerId}/list")

@@ -12,4 +12,5 @@ public interface RequestVisitRepository extends JpaRepository<RequestVisit, Inte
 	@Query("select v from RequestVisit v where v.owner.id= :id")
 	public Collection<RequestVisit> findRequestVisitByOwnerId(@Param("id") Integer id);
 	
+	
 }

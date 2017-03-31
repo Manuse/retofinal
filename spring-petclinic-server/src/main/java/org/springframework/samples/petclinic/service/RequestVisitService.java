@@ -11,4 +11,8 @@ public interface RequestVisitService {
 	void saveRequestVisit(RequestVisit requestVisit);
 	
 	Collection<RequestVisit> findRequestVisitByOwnerId(Integer id);
+	
+	RequestVisit findById(int id);
+	
+	RequestVisit updateState(RequestVisit requestVisit);
 }

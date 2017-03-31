@@ -32,5 +32,24 @@ public class RequestVisitServiceImpl implements RequestVisitService{
 		return requestVisitRepository.findRequestVisitByOwnerId(id);
 	}
 
+	@Override
+	@Transactional
+	public RequestVisit findById(int id) {
+		return requestVisitRepository.findOne(id);
+	}
+
+	@Override
+	@Transactional
+	public RequestVisit updateState(RequestVisit requestVisit) {
+		if(requestVisit.getState()==0){
+			requestVisit.setState(1);
+			saveRequestVisit(requestVisit);
+			return requestVisit;
+		}
+		requestVisit.setState(0);
+		saveRequestVisit(requestVisit);
+		return requestVisit;
+	}
+
 	
 }
