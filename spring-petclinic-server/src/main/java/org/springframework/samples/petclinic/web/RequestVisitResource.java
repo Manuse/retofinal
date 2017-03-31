@@ -32,7 +32,7 @@ public class RequestVisitResource extends AbstractResourceController{
 		this.clinicService=clinicService;
 	}
 	
-	@GetMapping("/requestvisits/list1")
+	@GetMapping("/requestvisits/list")
 	public Collection<RequestVisit> findRequestVisitAll(){
 		return requestVisitService.findRequestVisitAll();
 	}
